@@ -15,7 +15,7 @@ WORKDIR /app
 RUN export LOCAL_DEV=NOT
 RUN CGO_ENABLED=0 go build -o service
 
-FROM gcr.io/kaniko-project/executor:v1.23.0 AS final
+FROM gcr.io/kaniko-project/executor:v1.23.2 AS final
 
 WORKDIR /app
 COPY --from=builder /app/service .
